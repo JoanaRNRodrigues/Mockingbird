@@ -1,0 +1,66 @@
+﻿
+<!--FAZ GET ALL DE TODOS OS CHIRPS-->
+
+@model MockingBird.Models.ChirpsViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mockingbird</h1>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().User.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().User.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().ImagePath)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.Chirps)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                   <img src="/images/item.User.ImagePath"/>  <!--Imagem de perfil-->
+                </td>
+                <td>
+                    <img src="/images/item.ImagePath"/>  <!--Imagem de chirp-->
+                </td>
+            </tr>
+           
+            
+        }
+       
+    </tbody>
+</table>
+
+
+</div>
+
+<div>
+    <a asp-action="Logout">Logout</a>
+    <a asp-action="UserPage">Your Profile</a>
+</div>

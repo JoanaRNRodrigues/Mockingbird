@@ -1,0 +1,27 @@
+﻿
+<!--FAZ UPDATE AOS CHIRPS-->
+
+@model MockingBird.Models.ChirpViewModel
+@{
+    ViewData["Title"] = "UpdateChirp";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateChirp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>         
+            <div class="form-group">
+                <input type="submit" value="UpdateChirp" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <a asp-action="Feed">Return to feed</a>
+</div>

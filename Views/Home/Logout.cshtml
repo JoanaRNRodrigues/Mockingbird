@@ -1,0 +1,23 @@
+﻿@model MockingBird.Models.UsersViewModel
+@{
+    ViewData["Title"] = "Logout";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="LogoutUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <p>Are you sure you want to logout?</p>
+                <input type="submit" value="Logout" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Feed">Return to feed</a>
+</div>
+

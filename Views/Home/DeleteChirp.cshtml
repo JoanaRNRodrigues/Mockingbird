@@ -1,0 +1,23 @@
+﻿
+<!--FAZ DELETE AOS CHIRPS-->
+
+@model MockingBird.Models.ChirpViewModel
+@{
+    ViewData["Title"] = "Delete Chirp";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteChirp">
+            
+            Are you sure you want to delete this chirp?
+            <div class="form-group">
+                <input type="submit" value="DeleteChirp" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<a asp-action="Feed">Return to feed</a>

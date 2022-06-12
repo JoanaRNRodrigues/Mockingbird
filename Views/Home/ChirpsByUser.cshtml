@@ -1,0 +1,41 @@
+﻿@model MockingBird.Models.ChirpsViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Your Chirps</h1>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chirps.FirstOrDefault().User.UserName)
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.Chirps)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    <a asp-action="ChirpDetails" asp-route-id="@item.Id">Delete/Edit</a>
+                </td>
+            </tr>
+           
+        }
+       
+    </tbody>
+</table>
+<a asp-action="Feed">Return to feed</a>

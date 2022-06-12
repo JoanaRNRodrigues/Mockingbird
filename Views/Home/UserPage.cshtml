@@ -1,0 +1,32 @@
+﻿@* @model Tuple<MockingBird.Models.UsersViewModel,MockingBird.Models.User> *@
+
+@model UsersViewModel
+
+@{
+    ViewData["Title"] = "User Page";
+}
+
+<h4 class="display-4">Your details:</h4>
+
+<!--Fazer uma div para os elementos que vao ficar à direito e outra div para os elementos que vão ficar à esquerda-->
+<!--Inserir div esquerda-->
+<!--inserir div direita-->
+    <ul>
+        <li>Username: @Model.UserName</li>
+        <li>Email: @Model.Email</li>
+        <li>User ID: @Model.ID</li>
+
+        <img src="/images/@Model.ImagePath"/>
+    </ul>
+<div>
+    <a asp-action="Create">Create Chirp</a>
+    <a asp-action="ChirpsByUser">Your chirps</a> 
+    <a asp-action="ImageUpload">Update profile image</a> 
+    <a asp-action="DeleteUser">Delete your account</a> 
+    <a asp-action="Feed">Return to feed</a>
+</div>
+
+
+
+
+

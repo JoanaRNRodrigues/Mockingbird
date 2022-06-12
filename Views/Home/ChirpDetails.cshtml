@@ -1,0 +1,23 @@
+﻿
+@model MockingBird.Models.Chirp
+
+
+<link rel="stylesheet" href="../wwwroot/css/Index.css" />
+<div class="text-center">
+      
+<h4 class="display-4">Your details:</h4>
+
+
+   
+Text: @Model.Text</>
+        
+<img src="/images/@Model.User.ImagePath"/>  <!--Imagem de perfil-->
+        
+<img src="/images/@Model.ImagePath"/>  <!--Imagem de chirp-->
+       
+    
+<div>
+    <a asp-action="DeleteChirp" asp-route-id="@Model.Id">Delete Chirp</a>
+    <a asp-action="UpdateChirp" asp-route-id="@Model.Id">Update chirp</a> 
+    <a asp-action="Feed">Feed</a> 
+</div>
